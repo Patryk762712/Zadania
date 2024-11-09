@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class zadanie5 {
+    public static void main(String[] args) {
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
+        System.out.println("Witaj w kalkulatorze. Kalkulator służy do obliczenia wyników dodawnaia, odejmowania, dzielenia i mnożenia dwóch liczb rzeczywistych");
+
+
+                Scanner input = new Scanner(System.in); // użytkownik podaje liczbę
+                System.out.println("Podaj pierwszą liczbę"); // napis podaj liczbę
+                double liczba1 = input.nextInt();
+                System.out.println("Podaj drugą liczbę "); // napis podaj liczbę
+                double liczba2 = input.nextInt();
+                System.out.println("--------------------");
+                System.out.println("Podaj operację"); // napis podaj liczbę
+                String operacja = input.next();
+                input.close();
+
+                double wynik;
+
+                    switch (operacja){
+                        case "+" :
+                        wynik = liczba1 + liczba2;
+                        System.out.println("Suma wynosi:" + wynik );
+                        break;
+                        case "-":
+                            wynik = liczba1 - liczba2;
+                            System.out.println("Różnica wynosi:" + wynik );
+                            break;
+                            case "/":
+                            if (liczba2 == 0){
+                                System.out.println("Nie dzielimy przez 0!");
+                                break;
+                            }
+                            else {
+                                wynik = liczba1 / liczba2;
+                                System.out.println("Iloraz wynosi:" + wynik );
+                                break;
+                            }
+                            case "*":
+                                wynik = liczba1 * liczba2;
+                                System.out.println("Iloczyn wynosi:" + wynik );
+                                break;
+                        default:
+                            System.out.println("Podano zły znak działania");
+
+
+                    }
+                }
+
+
+
+        }
+
