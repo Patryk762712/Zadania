@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class zadanie5 {
+    public static void main(String[] args) {
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
+        System.out.println("Program służy do obliczania odsetek na podstawie podanej ceny oraz liczby rat ");
+
+
+                Scanner input = new Scanner(System.in); // użytkownik podaje liczbę
+                System.out.println("Podaj cenę towaru od 100 zł do 10 tyś zł: "); // napis podaj liczbę
+                int cena = input.nextInt();
+                System.out.println("Podaj liczbę rat "); // napis podaj liczbę
+                int raty = input.nextInt();
+                input.close();
+                System.out.println("--------------------");
+
+                if (cena < 100 || cena > 10_000 || raty < 6 || raty > 48){
+                    System.out.print("Podano błędne dane");
+                    System.out.print("Cena musi być w przedziale od 100 do 10 000");
+                    System.out.print("Liczba rat musi być w przedziale od 6 do 48");
+                } else {
+
+                    double mnożnik;
+
+                    if (raty <= 12) {
+                        mnożnik = 0.025;
+                    } else if (raty <=24) {
+                        mnożnik = 0.05;
+                    } else {
+                        mnożnik = 0.1;
+                    }
+
+                    double odsetki = cena * mnożnik;
+                    double suma = cena + odsetki;
+                    double wartosc_raty = suma / raty;
+
+                    System.out.println(+ odsetki + "- odsetki");
+                    System.out.println(+ suma + "koszt końcowy");
+                    System.out.println(+ wartosc_raty + "- wartość raty");
+
+                }
+
+
+
+        }
+    }
