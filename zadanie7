@@ -1,0 +1,79 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class zadanie5 {
+    public static void main(String[] args) {
+        double a = input("Podaj pierwszą liczbę");
+        System.out.println(a);
+        String dzialanie = input1("Podaj znak działania + - / *");
+        System.out.println(dzialanie);
+        double wynik;
+        double b;
+
+
+                    switch (dzialanie){
+                        case "+" :
+                            b = input("Podaj drugą liczbę");
+                            System.out.println(b);
+                        wynik = a + b;
+                        System.out.println("Suma wynosi:" + wynik );
+                        break;
+                        case "-" :
+                            b = input("Podaj drugą liczbę");
+                            System.out.println(b);
+                            wynik = a - b;
+                            System.out.println("Różnica wynosi:" + wynik );
+                            break;
+                            case "/":
+                                b = input("Podaj drugą liczbę");
+                                System.out.println(b);
+                            if (b == 0){
+                                System.out.println("Nie dzielimy przez 0!");
+                                break;
+                            }
+                            else {
+
+                                wynik = a / b;
+                                System.out.println("Iloraz wynosi:" + wynik );
+                                break;
+                            }
+                            case "*":
+                                b = input("Podaj drugą liczbę");
+                                System.out.println(b);
+                                wynik = a * b;
+                                System.out.println("Iloczyn wynosi:" + wynik );
+                                break;
+                        default:
+                            System.out.println("Podano zły znak działania");
+
+
+                    }
+                }
+
+            static double input(String message) {
+                try {
+                 Scanner input = new Scanner((System.in));
+                System.out.print(message);
+                return input.nextDouble();
+
+            } catch (InputMismatchException e) {
+        System.out.println("Podano złą wartość");
+            return input("Podaj liczbę: ");
+            }
+
+            }
+            static String input1 (String messagee){
+                try {
+                    Scanner input = new Scanner((System.in));
+                    System.out.print(messagee);
+                    return input.next();
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Podano zły znak");
+                    return input1 ("Podaj znak: ");
+                }
+            }
+        }
+
