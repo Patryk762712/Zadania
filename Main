@@ -1,0 +1,120 @@
+public class Adress {
+    private String adress;
+    private String city;
+
+    public Adress(String adress, String city){
+        this.adress = adress;
+        this.city = city;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+}
+
+///////////////////
+
+public class Company{
+    private String name;
+    private String adress;
+
+    public Company (String name) {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+
+//////////////
+
+
+public class Employee extends Person {
+    private int id;
+
+    public Employee(String name, String surname, int id){
+        super(name, surname);
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+}
+
+
+
+/////
+
+
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("Jan", "Testowy");
+        Company company = new Company("WSB");
+        company.setName("WSB");
+        System.out.println(company.getName());
+
+
+
+
+
+
+        }
+    }
+
+
+
+////////////////
+
+
+public class Person {
+    private String name;
+    private String surname;
+
+    public Person (String name, String surname){
+        this.surname = surname;
+        this.name = name;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+}
